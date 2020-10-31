@@ -1,8 +1,12 @@
+import React, { Fragment } from "react";
+import { Route } from "react-router-dom";
+import Menu from "./components/Menu";
+
 function App() {
   return (
-    <div className="App">
-      <h1>A</h1>
-    </div>
+    <Fragment>
+      <Route exact path="/" component={Menu} />
+    </Fragment>
   );
 }
 
