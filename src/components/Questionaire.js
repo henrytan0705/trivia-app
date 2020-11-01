@@ -18,6 +18,13 @@ function Questionaire(props) {
 
   const [score, updateScore] = useState(0);
 
+  function restart() {
+    updateScore(0);
+    nextQuestion(0);
+    nextTitle(questionSet[0].question);
+    nextChoices(questionSet[0]);
+  }
+
   function next() {
     if (questionNumber < 9) {
       nextQuestion(questionNumber + 1);
@@ -32,11 +39,15 @@ function Questionaire(props) {
 
   return (
     <Fragment>
+      <button disabled={!(questionNumber > 0)} onClick={restart}>
+        Restart
+      </button>
+
       <button>
         <Link to="/">Menu</Link>
       </button>
 
-      <h1>Current Question: {questionNumber + 1}/10</h1>
+      <h1>Current Score: {score} / 10</h1>
       <QuestionTitle title={currentQuestionTitle} />
 
       <AnswerChoices
