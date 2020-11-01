@@ -31,7 +31,12 @@ function Questionaire(props) {
       nextTitle(questionSet[questionNumber + 1].question);
       nextChoices(questionSet[questionNumber + 1]);
     } else {
-      props.history.push({ pathname: "/results", state: { detail: score } });
+      var userScore = score;
+      localStorage.setItem("score", userScore);
+      props.history.push({
+        pathname: "/results",
+        state: { detail: userScore }
+      });
     }
   }
 
@@ -47,7 +52,8 @@ function Questionaire(props) {
         <Link to="/">Menu</Link>
       </button>
 
-      <h1>Current Score: {score} / 10</h1>
+      <h1>Current Question: {questionNumber + 1}/10</h1>
+
       <QuestionTitle title={currentQuestionTitle} />
 
       <AnswerChoices
