@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Route } from "react-router-dom";
 import Menu from "./components/Menu";
 import Questionaire from "./components/Questionaire";
+import Results from "./components/Results";
 import data from "./data/Apprentice_TandemFor400_Data";
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
         path="/questionaire"
         render={props => <Questionaire {...props} questions={questions} />}
       />
+
+      <Route exact path="/results" render={props => <Results {...props} />} />
     </Fragment>
   );
 }

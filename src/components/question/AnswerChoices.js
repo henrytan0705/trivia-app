@@ -5,15 +5,19 @@ function AnswerChoices({ choices, next }) {
   const correct = choices.correct;
   const allChoices = [...incorrect, correct];
 
+  function submitAnswer(e) {
+    next();
+  }
+
   return (
     <Fragment>
       <div>Choices:</div>
 
       {allChoices.map((choice, index) => (
-        <div key={index}> {choice} </div>
+        <button onClick={e => submitAnswer(e)} key={index}>
+          {choice}
+        </button>
       ))}
-
-      <button onClick={() => next()}>Next</button>
     </Fragment>
   );
 }
