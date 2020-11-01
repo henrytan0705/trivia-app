@@ -1,12 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
-function AnswerChoices() {
+function AnswerChoices({ choices, next }) {
   return (
     <Fragment>
-      <div>Choice 1</div>
-      <div>Choice 2</div>
-      <div>Choice 3</div>
-      <div>Choice 4</div>
+      <div>Choices:</div>
+
+      <button onClick={() => next()}>Next</button>
     </Fragment>
   );
 }

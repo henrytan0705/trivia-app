@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-function QuestionTitle() {
+function QuestionTitle({ title }) {
   return (
     <Fragment>
-      <h1>Question Title</h1>
+      <h1>Question: {title}</h1>
     </Fragment>
   );
 }
