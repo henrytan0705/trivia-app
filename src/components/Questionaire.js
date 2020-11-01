@@ -16,13 +16,15 @@ function Questionaire(props) {
     questionSet[questionNumber]
   );
 
+  const [score, updateScore] = useState(0);
+
   function next() {
     if (questionNumber < 9) {
       nextQuestion(questionNumber + 1);
       nextTitle(questionSet[questionNumber + 1].question);
       nextChoices(questionSet[questionNumber + 1]);
     } else {
-      props.history.push("/results");
+      props.history.push({ pathname: "/results", state: { detail: score } });
     }
   }
 
@@ -36,7 +38,13 @@ function Questionaire(props) {
 
       <h1>Current Question: {questionNumber + 1}/10</h1>
       <QuestionTitle title={currentQuestionTitle} />
-      <AnswerChoices choices={currentAnswerChoices} next={next} />
+
+      <AnswerChoices
+        choices={currentAnswerChoices}
+        next={next}
+        score={score}
+        updateScore={updateScore}
+      />
     </Fragment>
   );
 }

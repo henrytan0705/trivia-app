@@ -7,12 +7,9 @@ import data from "./data/Apprentice_TandemFor400_Data";
 
 function App() {
   const [questions, setQuestions] = useState(0);
-  let [totalQuestions, updateCount] = useState(0);
 
   function getQuestions() {
-    console.log("FETCHING QUESTIONS");
     let allQuestions = data;
-    updateCount((totalQuestions = allQuestions.length));
     setQuestions(shuffle(allQuestions).slice(0, 10));
   }
 
