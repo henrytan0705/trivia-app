@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import QuestionTitle from "./question/QuestionTitle";
 import AnswerChoices from "./question/AnswerChoices";
@@ -24,7 +24,7 @@ function Questionaire({ questions }) {
 
   return (
     <Fragment>
-      <h1>Current Question Number: {questionNumber + 1}</h1>
+      <h1>Current Question: {questionNumber + 1}/10</h1>
 
       <QuestionTitle title={currentQuestionTitle} />
 
