@@ -33,6 +33,7 @@ function Questionaire(props) {
     } else {
       var userScore = score;
       localStorage.setItem("score", userScore);
+
       props.history.push({
         pathname: "/results",
         state: { detail: userScore }

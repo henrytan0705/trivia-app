@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Choice from "./Choice";
 
 function AnswerChoices({ choices, next, score, updateScore }) {
   const incorrect = choices.incorrect;
@@ -21,9 +22,7 @@ function AnswerChoices({ choices, next, score, updateScore }) {
       <div>Choices:</div>
 
       {allChoices.map((choice, index) => (
-        <button onClick={e => submitAnswer(e)} key={index}>
-          {choice}
-        </button>
+        <Choice choice={choice} key={index} submitAnswer={submitAnswer} />
       ))}
     </Fragment>
   );
