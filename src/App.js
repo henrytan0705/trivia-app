@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import Questionaire from "./components/Questionaire";
 import Results from "./components/Results";
 import data from "./data/Apprentice_TandemFor400_Data";
+import "./assets/stylesheets/reset.css";
 
 function App() {
   const [questions, setQuestions] = useState(0);
